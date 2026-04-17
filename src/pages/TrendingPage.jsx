@@ -37,7 +37,7 @@ export default function TrendingPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
+          model: 'claude-opus-4-5',
           max_tokens: 1000,
           system: 'You are a well-connected creative director and design industry insider. Share concise, opinionated takes on what is trending right now in graphic design, branding, and visual culture. Be specific and direct. No filler.',
           messages: [{ role: 'user', content: 'What are the most important graphic design and visual branding trends right now in 2025-2026? Give me 4-5 specific, actionable trends with real examples where you can. Be direct and opinionated.' }],

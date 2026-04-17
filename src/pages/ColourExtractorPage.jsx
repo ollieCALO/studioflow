@@ -38,7 +38,7 @@ export default function ColourExtractorPage() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
+            model: 'claude-opus-4-5',
             max_tokens: 800,
             system: `You are a colour expert. Analyse the image and extract the most visually dominant and distinct colours.
 Respond ONLY with valid JSON — no markdown, no backticks, no extra text.

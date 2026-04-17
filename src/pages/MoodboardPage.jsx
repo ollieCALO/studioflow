@@ -28,7 +28,7 @@ export default function MoodboardPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
+          model: 'claude-opus-4-5',
           max_tokens: 1500,
           system: `You are a creative director at a top branding agency. When given a brand brief, produce a rich creative direction document.
 Respond ONLY with valid JSON — no markdown, no backticks, no explanation.
