@@ -54,7 +54,7 @@ Ensure all hex codes are valid 6-digit hex values.`,
       const parsed = JSON.parse(clean);
       setPalettes(parsed.palettes || []);
     } catch (e) {
-      setError('${e.message || JSON.stringify(e)}');
+      setError('Error: ' + (e.message || String(e)));
     }
     setLoading(false);
   };
