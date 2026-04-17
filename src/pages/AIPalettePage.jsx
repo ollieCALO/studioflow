@@ -48,7 +48,10 @@ Ensure all hex codes are valid 6-digit hex values.`,
         }),
       });
 
-      const data = await res.json();
+      const rawText = await res.text();
+      if (!rawText) throw new Error('Empty response from API - possible timeout');
+      const data = JSON.parse(rawText);
+      if (!data || data.error) throw new Error(data?.error?.message || data?.error || 'API returned error status ' + res.status);
       const text = data.content?.[0]?.text || '';
       const clean = text.replace(/```json|```/g, '').trim();
       const parsed = JSON.parse(clean);
