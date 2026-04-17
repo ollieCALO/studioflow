@@ -36,7 +36,7 @@ export default function AIPalettePage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-opus-4-5',
+          model: 'claude-haiku-4-5-20251001',
           max_tokens: 1000,
           system: `You are an expert brand designer and colour theorist. When given a brief, generate 3 distinct colour palettes. 
 Each palette has exactly 5 hex colours and a short name.

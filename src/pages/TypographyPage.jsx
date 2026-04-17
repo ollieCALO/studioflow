@@ -120,7 +120,7 @@ export default function TypographyPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-opus-4-5',
+          model: 'claude-haiku-4-5-20251001',
           max_tokens: 1000,
           system: 'You are a senior typographer and brand identity designer. Give specific, practical font pairing advice. Always recommend real Google Fonts. Format clearly with font names, rationale, and use cases. Be direct and opinionated.',
           messages: [{ role: 'user', content: aiPrompt }],
