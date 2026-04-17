@@ -114,9 +114,17 @@ export function Spinner() {
   );
 }
 
-export function Grid({ cols = 3, gap = 16, children, style }) {
+export function Grid({ cols = 3, gap = 16, children, style, className }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap, ...style }}>
+    <div
+      className={`responsive-grid cols-${cols}${className ? ' ' + className : ''}`}
+      style={{
+        display: 'grid',
+        gridTemplateColumns: `repeat(${cols}, 1fr)`,
+        gap,
+        ...style,
+      }}
+    >
       {children}
     </div>
   );

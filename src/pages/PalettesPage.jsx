@@ -66,11 +66,11 @@ export default function PalettesPage() {
         display: 'flex',
         alignItems: 'center',
         gap: 28,
-      }}>
+      }} className="palette-hero-inner">
         <div style={{ flex: 1 }}>
           <PaletteStrip colours={hero.colours} height={88} />
         </div>
-        <div style={{ color: 'var(--paper)', minWidth: 180 }}>
+        <div style={{ color: 'var(--paper)', minWidth: 180 }} className="palette-hero-info">
           <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>{hero.name}</div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'rgba(255,255,255,0.4)', marginBottom: 12 }}>{hero.vibe}</div>
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>

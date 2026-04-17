@@ -127,7 +127,7 @@ export default function GeneratorPage() {
           </p>
 
           <SectionLabel>Colour Roles</SectionLabel>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12, marginBottom: 28 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12, marginBottom: 28 }} className="colour-roles">
             {palette.map((c, i) => (
               <div
                 key={i}

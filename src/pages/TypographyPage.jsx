@@ -146,7 +146,7 @@ export default function TypographyPage() {
       <PageHeader title="Typography" sub="// pairings, scale & font intelligence" />
 
       {/* Tab bar */}
-      <div style={{ display: 'flex', gap: 4, marginBottom: 28, background: 'var(--warm)', padding: 4, borderRadius: 10, width: 'fit-content' }}>
+      <div style={{ display: 'flex', gap: 4, marginBottom: 28, background: 'var(--warm)', padding: 4, borderRadius: 10, width: 'fit-content' }} className="tab-bar">
         {tabs.map(t => (
           <button
             key={t.id}

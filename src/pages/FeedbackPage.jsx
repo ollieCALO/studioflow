@@ -153,7 +153,7 @@ Be specific. Reference actual design principles. Don't pad.`,
 
       {/* Focus toggles */}
       <SectionLabel>Feedback Focus</SectionLabel>
-      <Grid cols={4} gap={10} style={{ marginBottom: 20 }}>
+      <Grid cols={4} gap={10} style={{ marginBottom: 20 }} className="feedback-grid">
         {FOCUS_OPTIONS.map(opt => (
           <button
             key={opt.label}

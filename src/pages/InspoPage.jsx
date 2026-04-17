@@ -69,7 +69,7 @@ export default function InspoPage() {
       <SectionLabel>References</SectionLabel>
 
       {/* Masonry-style grid using CSS columns */}
-      <div style={{ columns: 3, gap: 14, marginBottom: 28 }}>
+      <div style={{ columns: 3, gap: 14, marginBottom: 28 }} className="inspo-masonry">
         {filtered.map(item => (
           <InspoItem
             key={item.id}
