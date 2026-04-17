@@ -54,7 +54,7 @@ Ensure all hex codes are valid 6-digit hex values.`,
       const parsed = JSON.parse(clean);
       setPalettes(parsed.palettes || []);
     } catch (e) {
-      setError('Could not generate palettes. Check your API key is set in Vercel.');
+      setError('${e.message || JSON.stringify(e)}');
     }
     setLoading(false);
   };
