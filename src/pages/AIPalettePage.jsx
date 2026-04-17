@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { saveItem, generateShareUrl, ITEM_TYPES } from '../utils/library';
 import { PageHeader, SectionLabel, Card, Button, Spinner } from '../components/UI';
 import { getContrastColor } from '../utils/colours';
 
@@ -193,6 +194,7 @@ Ensure all hex codes are valid 6-digit hex values.`,
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--muted)', marginTop: 2 }}>{palette.mood}</div>
                   </div>
                   <div style={{ display: 'flex', gap: 8 }}>
+                    <SaveShareButtons item={{ type: ITEM_TYPES.PALETTE, data: palette }} />
                     <button
                       onClick={() => copyCSS(palette)}
                       style={{
@@ -245,5 +247,22 @@ Ensure all hex codes are valid 6-digit hex values.`,
         </>
       )}
     </div>
+  );
+}
+
+export function SaveShareButtons({ item, label = 'Save' }) {
+  const [saved, setSaved] = useState(false);
+  const [shared, setShared] = useState(false);
+  const handleSave = () => { saveItem(item); setSaved(true); setTimeout(() => setSaved(false), 2000); };
+  const handleShare = () => { navigator.clipboard?.writeText(generateShareUrl(item)); setShared(true); setTimeout(() => setShared(false), 2000); };
+  return (
+    <>
+      <button onClick={handleSave} style={{ padding: '7px 14px', borderRadius: 8, border: '0.5px solid var(--border)', fontSize: 11, fontFamily: 'var(--font-mono)', cursor: 'pointer', background: saved ? '#2d5a3d' : 'var(--ink)', color: saved ? '#fff' : 'var(--paper)' }}>
+        {saved ? '✓ Saved' : '↓ ' + label}
+      </button>
+      <button onClick={handleShare} style={{ padding: '7px 14px', borderRadius: 8, border: '0.5px solid var(--border)', fontSize: 11, fontFamily: 'var(--font-mono)', cursor: 'pointer', background: shared ? '#2d5a3d' : 'var(--warm)', color: shared ? '#fff' : 'var(--ink)' }}>
+        {shared ? '✓ Copied!' : '↗ Share'}
+      </button>
+    </>
   );
 }
