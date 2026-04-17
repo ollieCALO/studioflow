@@ -1,5 +1,4 @@
 export default async function handler(req, res) {
-  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -11,9 +10,7 @@ export default async function handler(req, res) {
   if (!apiKey) return res.status(500).json({ error: 'API key not configured' });
 
   try {
-    // Parse body — handles both pre-parsed objects and raw strings
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -23,8 +20,9 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify(body),
     });
-
-    const data = await response.json();
+    const text = await response.text();
+    let data;
+    try { data = JSON.parse(text); } catch { data = { error: text }; }
     return res.status(response.status).json(data);
   } catch (err) {
     return res.status(500).json({ error: 'Proxy error', details: err.message });
