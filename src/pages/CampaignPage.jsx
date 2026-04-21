@@ -72,26 +72,7 @@ export default function CampaignPage() {
         body: JSON.stringify({
           model: 'claude-haiku-4-5-20251001',
           max_tokens: 3000,
-          system: `You are an award-winning creative director at a top global agency. Create iconic, culturally resonant campaigns. Be bold, specific, opinionated.
-Respond ONLY with valid JSON — no markdown, no backticks.
-Format:
-{
-  "campaignName": "string",
-  "bigIdea": "string",
-  "tagline": "string",
-  "insight": "string",
-  "concept": "string",
-  "headlines": [{"headline":"string","context":"string"}],
-  "copyDirections": [{"tone":"string","sample":"string"}],
-  "visualDirection": {"artDirection":"string","moodWords":["string"],"references":["string"]},
-  "channels": [{"channel":"string","idea":"string","format":"string","copy":"string"}],
-  "campaignPillar1": {"name":"string","description":"string"},
-  "campaignPillar2": {"name":"string","description":"string"},
-  "campaignPillar3": {"name":"string","description":"string"},
-  "doList": ["string"],
-  "dontList": ["string"],
-  "kpis": ["string"]
-}`,
+          system: `You are a creative director. Given a campaign brief, respond ONLY with a valid JSON object. No markdown, no backticks, no explanation. JSON format: {"campaignName":"string","bigIdea":"string","tagline":"string","insight":"string","concept":"string","headlines":[{"headline":"string","context":"string"}],"copyDirections":[{"tone":"string","sample":"string"}],"visualDirection":{"artDirection":"string","moodWords":["string"],"references":["string"]},"channels":[{"channel":"string","idea":"string","format":"string","copy":"string"}],"campaignPillar1":{"name":"string","description":"string"},"campaignPillar2":{"name":"string","description":"string"},"campaignPillar3":{"name":"string","description":"string"},"doList":["string"],"dontList":["string"],"kpis":["string"]}`,
           messages: [{ role: 'user', content }],
         }),
       });
