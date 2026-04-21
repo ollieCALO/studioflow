@@ -6,6 +6,7 @@ const NAV = [
   { id: 'aipalette',  icon: '✦', label: 'AI Palette Gen' },
   { id: 'extractor',  icon: '◉', label: 'Colour Extractor' },
   { id: 'moodboard',  icon: '◈', label: 'Brief → Moodboard' },
+  { id: 'campaign',   icon: '◆', label: 'Campaign Generator' },
   { section: 'Colour' },
   { id: 'palettes',   icon: '▣', label: 'Curated Palettes' },
   { id: 'generator',  icon: '⬡', label: 'Palette Generator' },
