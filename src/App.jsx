@@ -11,7 +11,6 @@ import TrendingPage from './pages/TrendingPage';
 import FeedbackPage from './pages/FeedbackPage';
 import LibraryPage from './pages/LibraryPage';
 import CampaignPage from './pages/CampaignPage';
-import CampaignPage from './pages/CampaignPage';
 import SharedPage from './pages/SharedPage';
 
 const PAGES = {
