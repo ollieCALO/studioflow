@@ -18,6 +18,7 @@ const PAGES = {
   palettes: <PalettesPage />, generator: <GeneratorPage />, aipalette: <AIPalettePage />,
   extractor: <ColourExtractorPage />, typography: <TypographyPage />, inspo: <InspoPage />,
   moodboard: <MoodboardPage />, trending: <TrendingPage />, feedback: <FeedbackPage />, library: <LibraryPage />,
+  campaign:   <CampaignPage />,
 };
 
 export default function App() {
