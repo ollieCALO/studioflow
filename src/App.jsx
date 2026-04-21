@@ -55,7 +55,7 @@ export default function App() {
         </div>
         <div style={{ padding: 'var(--page-padding)' }}>{PAGES[activePage]}</div>
       </main>
-      <style>{\`
+      <style>{`
         :root { --page-padding: 36px 44px; }
         .sidebar-wrap { flex-shrink: 0; }
         .mobile-topbar { display: none; }
@@ -67,7 +67,7 @@ export default function App() {
           .mobile-topbar { display: flex !important; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 0.5px solid var(--border); background: var(--paper); position: sticky; top: 0; z-index: 30; }
           .mobile-overlay { display: block !important; }
         }
-      \`}</style>
+      `}</style>
     </div>
   );
 }
